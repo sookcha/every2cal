@@ -15,9 +15,13 @@ class Convert():
 
     def get_subjects(self):
         result = []
-
-        tree = ElementTree.parse(self.filename)
-        root = tree.getroot()
+        try:
+            tree = ElementTree.parse(self.filename)
+            root = tree.getroot()
+        except:
+            tree = ElementTree.fromstring(self.filename)
+            root = tree
+            
         for subject in root.findall('subject'):
             name = subject.find("name").get("value")
             single_subject = {}

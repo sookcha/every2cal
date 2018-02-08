@@ -3,14 +3,17 @@ from bs4 import BeautifulSoup
 import xml.etree.ElementTree as ElementTree
 
 class Everytime:
-    def get_request(self, userid, password, year, semester):
+    def __init__(self, userid, password):
+        self.userid = userid
+        self.password = password
+
+    def get_timetable(self, year, semester):
         result_xml = ""
 
-        payload = {'userid': userid, 'password': password}
+        payload = {'userid': self.userid, 'password': self.password}
         url = 'https://everytime.kr/user/login'
 
         with requests.Session() as session:
-            timetable_url = 'http://everytime.kr/timetable/%s/%s' % (year, semester)
             index_page_res = session.post(url, data=payload)
 
             soup = BeautifulSoup(index_page_res.text, 'html.parser')
