@@ -6,6 +6,7 @@ import os
 import xml.etree.ElementTree as ElementTree
 from dateutil import parser
 from icalendar import Calendar, Event
+import requests
 
 
 class Convert():
