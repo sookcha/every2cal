@@ -1,0 +1,6 @@
+*.xml
+.idea
+.venv
+__pycache__
+*.ics
+
