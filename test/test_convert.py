@@ -1,3 +1,6 @@
+# -*- coding: utf8 -*-
+__author__ = "Hoseong Son <me@sookcha.com>"
+
 import unittest
 
 from dateutil import parser

@@ -1,6 +1,8 @@
+# -*- coding: utf8 -*-
+__author__ = "Hoseong Son <me@sookcha.com>"
+
 import datetime
 import os
-import tempfile
 import xml.etree.ElementTree as ElementTree
 from dateutil import parser
 from icalendar import Calendar, Event
