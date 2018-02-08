@@ -1,9 +1,12 @@
 import unittest
 
+from everytime import Everytime
 
-class MyTestCase(unittest.TestCase):
-    def test_something(self):
-        self.assertEqual(True, False)
+
+class TestEveryTime(unittest.TestCase):
+    def test_get_request(self):
+        e = Everytime()
+        print(e.get_request('', '', '2017', '1'))
 
 
 if __name__ == '__main__':
