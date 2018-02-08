@@ -10,7 +10,7 @@ Everytime 앱 보다 캘린더로 일정을 관리하는게 편한 마음에 항
 
 ## 어떻게 사용하나요?
 
-[![asciicast](https://asciinema.org/a/Quj8e7BmLGcB47URx7kKPQkSF.png)](https://asciinema.org/a/Quj8e7BmLGcB47URx7kKPQkSF)
+<a href="https://asciinema.org/a/Quj8e7BmLGcB47URx7kKPQkSF" target="_blank"><img src="https://asciinema.org/a/Quj8e7BmLGcB47URx7kKPQkSF.png" width="500" /></a>
 
 `python every2cal.py --begin 학기가 시작하는 날짜 --end 학기가 끝나는 날짜`
 
