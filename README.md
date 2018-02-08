@@ -10,9 +10,9 @@ Everytime 앱 보다 캘린더로 일정을 관리하는게 편한 마음에 항
 
 ## 어떻게 사용하나요?
 
-`python every2cal.py --xml 에브리타임 시간표 XML 파일 경로 --begin 학기가 시작하는 날짜 --end 학기가 끝나는 날짜`
+`python every2cal.py --begin 학기가 시작하는 날짜 --end 학기가 끝나는 날짜`
 
-로 사용합니다. 
+로 사용합니다.
 
 Every2Cal은 Everytime 내부의 AJAX로 불러와지는 .xml 형식 시간표를 활용하고 있습니다.
 

@@ -20,11 +20,11 @@ if (args.xml):
     xml = args.xml
 
 else:
-    username = input('에브리타임 아이디 :')
+    username = input('에브리타임 아이디 : ')
     password = getpass.getpass()
 
-    year = input('가져올 년도 :')
-    semester = input('가져올 학기 :')
+    year = input('가져올 년도 : ')
+    semester = input('가져올 학기 : ')
 
     e = everytime.Everytime(username, password)
     xml = e.get_timetable(year, semester)
