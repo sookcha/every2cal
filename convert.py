@@ -21,7 +21,7 @@ class Convert():
         except:
             tree = ElementTree.fromstring(self.filename)
             root = tree
-            
+
         for subject in root.findall('subject'):
             name = subject.find("name").get("value")
             single_subject = {}
@@ -56,6 +56,8 @@ class Convert():
         f = open(os.path.join('', 'example.ics'), 'wb')
         f.write(cal.to_ical())
         f.close()
+
+        print("작업 완료!🙌")
 
     def get_nearest_date(self, start_date, weekday):
         start_date = parser.parse(start_date)
