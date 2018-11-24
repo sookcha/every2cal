@@ -1,12 +1,14 @@
 # Every2Cal
 
+[![Build Status](https://travis-ci.com/sookcha/every2cal.svg?branch=master)](https://travis-ci.com/sookcha/every2cal)
+
 ![](https://i.imgur.com/O098TZc.png)
 
 Every2Cal은 Everytime 시간표를 .ics 형식으로 내보내주는 Python 프로그램입니다.
 
 Everytime 앱 보다 캘린더로 일정을 관리하는게 편한 마음에 항상 Everytime 시간표를 수기로 캘린더에 적곤 했습니다.
  
-그 수고로움을 덜고자 개발했습니다
+그 수고로움을 덜고자 개발했습니다.
 
 ## 어떻게 사용하나요?
 
