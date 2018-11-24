@@ -14,7 +14,9 @@ class Everytime:
         url = 'https://everytime.kr/user/login'
 
         with requests.Session() as session:
-            timetable_result = session.post("http://timetable.everytime.kr/ajax/timetable/wizard/getTableList", data={
+            session.post(url, data=payload)
+
+            timetable_result = session.post("https://everytime.kr/find/timetable/table/list/semester", data={
                 "semester": semester,
                 "year": year
             })
@@ -26,5 +28,4 @@ class Everytime:
                     "id": id
                 })
                 result_xml = table_xml.text
-
         return result_xml
