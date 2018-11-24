@@ -22,7 +22,7 @@ class Convert():
             tree = ElementTree.fromstring(self.filename)
             root = tree
 
-        for subject in root.findall('subject'):
+        for subject in root.iter('subject'):
             name = subject.find("name").get("value")
             single_subject = {}
 
