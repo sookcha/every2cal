@@ -1,5 +1,4 @@
 import requests
-from bs4 import BeautifulSoup
 import xml.etree.ElementTree as ElementTree
 
 class Everytime:
@@ -16,7 +15,7 @@ class Everytime:
         with requests.Session() as session:
             session.post(url, data=payload)
 
-            timetable_result = session.post("https://everytime.kr/find/timetable/table/list/semester", data={
+            timetable_result = session.post("https://api.everytime.kr/find/timetable/table/list/semester", data={
                 "semester": semester,
                 "year": year
             })
@@ -24,7 +23,7 @@ class Everytime:
             tree = ElementTree.fromstring(timetable_result.text)
             for target in tree.findall('table[@is_primary="1"]'):
                 id = target.get('id')
-                table_xml = session.post("https://everytime.kr/find/timetable/table", data={
+                table_xml = session.post("https://api.everytime.kr/find/timetable/table", data={
                     "id": id
                 })
                 result_xml = table_xml.text
