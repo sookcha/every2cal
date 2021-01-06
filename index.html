@@ -7,4 +7,55 @@
     </form>
   </div>
 
+  <h1>Pikaday Example</h1>
+  
+  <div class="dates-wrapper group">
+  
+    <div class="field clearfix date-range-start date-wrapper">
+      <div class="label">
+        <label for="datepicker-start">Start:</label>
+      </div>
+      <div class="input">
+        <input type="date" name="experience-start" id="datepicker-start" class="input-text" placeholder="dd/mm/yyyy">
+      </div>
+    </div>
+  
+    <div class="field clearfix date-range-start date-wrapper">
+      <div class="label">
+        <label for="datepicker-end">End:</label>
+      </div>
+      <div class="input">
+        <input type="date" name="experience-end" id="datepicker-end" class="input-text" placeholder="dd/mm/yyyy">
+      </div>
+    </div>
+  
+  </div>
+
+<script>
+    /*if ( $('[type="date"]').prop('type') != 'date' ) {
+    } */
+
+    if ($("html").hasClass("no-touch")) {
+    var $input, $btn;
+    $(".date-wrapper").each(function (index) {
+        $input = $(this).find("input");
+        $btn = $(this).find(".calendar-btn");
+        $input.attr("type", "text");
+        var pickerStart = new Pikaday({
+        field: $input[0],
+        trigger: $btn[0],
+        container: $(this)[0],
+        format: "DD/MM/YYYY",
+        firstDay: 1
+        });
+        $btn.show();
+    });
+    } else {
+    $(".date-wrapper input").attr("type", "date");
+    $(".calendar-btn").hide();
+    }
+
+</script>
+
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="calendar.css">
