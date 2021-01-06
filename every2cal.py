@@ -1,12 +1,7 @@
 # -*- coding: utf8 -*-
 import getpass
-
 import everytime
-
-__author__ = "Hoseong Son <me@sookcha.com>"
-
 import argparse
-
 from convert import Convert
 
 def main():
