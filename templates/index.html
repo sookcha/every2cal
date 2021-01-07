@@ -1,0 +1,70 @@
+<div class="login">
+</div>
+
+<form name="get_cal" method="post" action="dwn_cal/{{start_date}}/{{user_id}}" id="get_cal">
+  <h1>학기가 시작하는 날과 끝나는 날을 넣어주세요.</h1>
+
+  <div class="dates-wrapper group">
+
+    <div class="field clearfix date-range-start date-wrapper">
+      <div class="label">
+        <label for="datepicker-start">시작하는 날</label>
+      </div>
+      <div class="input">
+        <input type="date" name="start_date" id="datepicker-start" class="input-text" placeholder="dd/mm/yyyy">
+      </div>
+    </div>
+
+    <div class="field clearfix date-range-start date-wrapper">
+      <div class="label">
+        <label for="datepicker-end">끝나는 날</label>
+      </div>
+      <div class="input">
+        <input type="date" name="end_date" id="datepicker-end" class="input-text" placeholder="dd/mm/yyyy">
+      </div>
+    </div>
+    <h1>에브리타임 계정</h1>
+    <input type="text" name="user_id" placeholder="ID" required="required" />
+    <input type="password" name="user_password" placeholder="Password" required="required" />
+    <button type="submit" class="btn btn-primary btn-block btn-large">변환하기</button>
+
+</form>
+</div>
+
+
+
+<script>
+  /*if ( $('[type="date"]').prop('type') != 'date' ) {
+  } */
+
+  if ($("html").hasClass("no-touch")) {
+    var $input, $btn;
+    $(".date-wrapper").each(function (index) {
+      $input = $(this).find("input");
+      $btn = $(this).find(".calendar-btn");
+      $input.attr("type", "text");
+      var pickerStart = new Pikaday({
+        field: $input[0],
+        trigger: $btn[0],
+        container: $(this)[0],
+        format: "DD/MM/YYYY",
+        firstDay: 1
+      });
+      $btn.show();
+    });
+  } else {
+    $(".date-wrapper input").attr("type", "date");
+    $(".calendar-btn").hide();
+  }
+
+  // $('#myForm').submit(function ()
+  // {
+  //     var action = '';
+  //     // compute action here...
+  //     $(this).attr('action', action);
+  // });
+
+</script>
+
+<link rel="stylesheet" href="static/style.css">
+<link rel="stylesheet" href="static/calendar.css">

@@ -188,9 +188,9 @@ body {
   position: relative;
   top: 30%;
   left: 50%;
-  margin: -150px 0 0 -150px;
-  width: 300px;
-  height: 500px;
+  margin: -150px 0 0 0;
+  width: 280px;
+  height: 280px;
   text-align: center;
 }
 .login h1 {

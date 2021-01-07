@@ -29,5 +29,19 @@ def main():
     c.get_calendar(c.get_subjects(), args.begin, args.end)
 
 
+def DownCal(begin, end, username, password):
+
+    # year = input('가져올 년도 : ')
+    # semester = input('가져올 학기 : ')
+
+    e = everytime.Everytime(username, password)
+    xml = e.get_timetable(year, semester)
+
+    c = Convert(xml)
+    c.get_calendar(c.get_subjects(), begin, end)
+
+    print('test SUCESS')
+
+
 if __name__ == '__main__':
     main()
