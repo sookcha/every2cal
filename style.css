@@ -185,12 +185,13 @@ body {
   text-align: center;
 }
 .login {
-  position: absolute;
-  top: 50%;
+  position: relative;
+  top: 30%;
   left: 50%;
   margin: -150px 0 0 -150px;
   width: 300px;
-  height: 300px;
+  height: 500px;
+  text-align: center;
 }
 .login h1 {
   color: #fff;

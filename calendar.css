@@ -5,7 +5,7 @@
 }
 
 body {
-  padding: 3em;
+  /* padding: 3em; */
   font-family: Arial, sans-serif;
   font-weight: normal;
   color: #f0f0f0;
@@ -26,12 +26,16 @@ body {
   outline: none;
   vertical-align: middle;
   height: 36px;
-  border-radius: 0;
+  /* border-radius: 0; */
   display: block;
   width: 100%;
   -webkit-appearance: none;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
+
+  border-radius:0.5em;
+  -moz-border-radius: 0.5em;
+  -webkit-border-radius: 0.5em;
 }
 
 .date-wrapper {

@@ -1,14 +1,4 @@
 <div class="login">
-    <h1>에브리타임 계정</h1>
-    <form method="post", action="dwn_cal">
-      <input type="text" name="u" placeholder="ID" required="required" />
-      <input type="password" name="p" placeholder="Password" required="required" />
-      <button type="submit" class="btn btn-primary btn-block btn-large">변환하기</button>
-
-    </form>
-  </div>
-
-
   <h1>학기가 시작하는 날과 끝나는 날을 넣어주세요.</h1>
 
   <div class="dates-wrapper group">
@@ -31,6 +21,17 @@
       </div>
     </div>
   </div>
+
+    <h1>에브리타임 계정</h1>
+    <form method="post" action="dwn_cal">
+      <input type="text" name="user_id" placeholder="ID" required="required" />
+      <input type="password" name="password" placeholder="Password" required="required" />
+      <button type="submit" class="btn btn-primary btn-block btn-large">변환하기</button>
+
+    </form>
+  </div>
+
+
 
 <script>
     /*if ( $('[type="date"]').prop('type') != 'date' ) {
