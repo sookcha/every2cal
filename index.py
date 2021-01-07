@@ -12,18 +12,8 @@ app = Flask(__name__)
 def home():
     return render_template("index.html")
 
-# @app.route("/file_download")
-# def hello():
-#     return '''
-#     <a href="/dwn_cal">Click me.</a>
-    
-#     <form method="get" action="dwn_cal">
-#         <button type="submit">Download!</button>
-#     </form>
-#     '''
 
-
-@app.route('/dwn_cal/<start_date>/<user_id>')
+@app.route('/dwn_cal', methods=['GET', 'POST'])
 def dwn_cal():
     start_date = request.args.get('start_date')
     end_date = request.args.get('end_date')
@@ -32,9 +22,9 @@ def dwn_cal():
 
     try:
         cal = DownCal(start_date, end_date, user_id, user_password)
-        # return send_file(cal,
-        #                 start_date + end_date + 'csv',
-        #                 as_attachment=True)
+        return send_file(cal,
+                        start_date + end_date + 'csv',
+                        as_attachment=True)
     except:
         return'''
         <h1>로그인 정보 혹은 시간표 존재 유무를 다시 확인해주세요.</h1>
