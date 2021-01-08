@@ -1,1 +1,1 @@
-worker: gunicorn index:app
+worker: gunicorn index:home
