@@ -36,4 +36,4 @@ def dwn_cal():
     #                  attachment_filename='downloaded_file_name.csv',# 다운받아지는 파일 이름. 
     #                  as_attachment=True)
 
-app.run(debug=True)
+app.run(debug=True, host='0.0.0.0')
