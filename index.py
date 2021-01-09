@@ -36,4 +36,5 @@ def dwn_cal():
     #                  attachment_filename='downloaded_file_name.csv',# 다운받아지는 파일 이름. 
     #                  as_attachment=True)
 
-app.run(debug=True, host='0.0.0.0')
+if __name__ == '__main__':
+    app.run(host='0.0.0.0' port=5000)
