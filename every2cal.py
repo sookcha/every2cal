@@ -1,6 +1,3 @@
-# -*- coding: utf8 -*-
-import getpass
-
 import everytime
 
 __author__ = "Hoseong Son <me@sookcha.com>"
@@ -19,16 +16,11 @@ def main():
     xml = ""
     if (args.xml):
         xml = args.xml
-
     else:
-        username = input('에브리타임 아이디 : ')
-        password = getpass.getpass()
+        path = input('경로 : ')
 
-        year = input('가져올 년도 : ')
-        semester = input('가져올 학기 : ')
-
-        e = everytime.Everytime(username, password)
-        xml = e.get_timetable(year, semester)
+        e = everytime.Everytime(path)
+        xml = e.get_timetable()
 
     c = Convert(xml)
     c.get_calendar(c.get_subjects(), args.begin, args.end)

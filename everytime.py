@@ -1,30 +1,24 @@
+from datetime import time
 import requests
-import xml.etree.ElementTree as ElementTree
-
 class Everytime:
-    def __init__(self, userid, password):
-        self.userid = userid
-        self.password = password
+    def __init__(self, path):
+        self.path = path
 
-    def get_timetable(self, year, semester):
-        result_xml = ""
-
-        payload = {'userid': self.userid, 'password': self.password}
-        url = 'https://everytime.kr/user/login'
-
-        with requests.Session() as session:
-            session.post(url, data=payload)
-
-            timetable_result = session.post("https://api.everytime.kr/find/timetable/table/list/semester", data={
-                "semester": semester,
-                "year": year
-            })
-
-            tree = ElementTree.fromstring(timetable_result.text)
-            for target in tree.findall('table[@is_primary="1"]'):
-                id = target.get('id')
-                table_xml = session.post("https://api.everytime.kr/find/timetable/table", data={
-                    "id": id
-                })
-                result_xml = table_xml.text
-        return result_xml
+    def get_timetable(self):
+        return requests.post(
+            "https://api.everytime.kr/find/timetable/table/friend",
+            data={
+                "identifier": self.path,
+                "friendInfo": 'true'
+            },
+            headers={
+                "Accept": "*/*",
+                "Connection": "keep-alive",
+                "Pragma": "no-cache",
+                "Cache-Control": "no-cache",
+                "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+                "Host": "api.everytime.kr",
+                "Origin": "https://everytime.kr",
+                "Referer": "https://everytime.kr/",
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.63 Safari/537.36"
+            }).text
