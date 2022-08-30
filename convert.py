@@ -51,6 +51,8 @@ class Convert():
                 event.add('dtstart', parser.parse("%s %s" % (self.get_nearest_date(start_date, time["day"]), time["startAt"])))
                 event.add('dtend', parser.parse("%s %s" % (self.get_nearest_date(start_date, time["day"]), time["endAt"])))
                 event.add('rrule', {'freq': 'WEEKLY', 'until': parser.parse(end_date)})
+                if time["place"] != "":
+                    event.add('location', time["place"])
                 cal.add_component(event)
 
         f = open(os.path.join('', 'calendar.ics'), 'wb')
