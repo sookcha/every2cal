@@ -6,8 +6,10 @@ import argparse
 
 from convert import Convert
 
+
 def main():
     parser = argparse.ArgumentParser()
+    parser.add_argument("--id", type=str, help="Everytime timetable id", required=False)
     parser.add_argument("--xml", type=str, help="Location of timetable xml file", required=False)
     parser.add_argument("--begin", type=str, help="Semester beginning date", required=True)
     parser.add_argument("--end", type=str, help="Semester ending date", required=True)
@@ -17,7 +19,7 @@ def main():
     if (args.xml):
         xml = args.xml
     else:
-        path = input('경로 : ')
+        path = args.id if (args.id) else input('경로 : ')
 
         e = everytime.Everytime(path)
         xml = e.get_timetable()
