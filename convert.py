@@ -2,7 +2,6 @@
 __author__ = "Hoseong Son <me@sookcha.com>"
 
 import datetime
-import os
 import xml.etree.ElementTree as ElementTree
 from dateutil import parser
 from icalendar import Calendar, Event
@@ -53,11 +52,11 @@ class Convert():
                 event.add('rrule', {'freq': 'WEEKLY', 'until': parser.parse(end_date)})
                 cal.add_component(event)
 
-        f = open(os.path.join('', 'calendar.ics'), 'wb')
-        f.write(cal.to_ical())
-        f.close()
-
-        print("작업 완료!🙌")
+        return cal
+    
+    def export_calender_as_ics(self, cal, path):
+        with open(path, 'wb') as f:
+            f.write(cal.to_ical())
 
     def get_nearest_date(self, start_date, weekday):
         start_date = parser.parse(start_date)
