@@ -40,17 +40,17 @@ class Convert():
 
         return result
 
-    def get_calendar(self, timetable, start_date, end_date):
+    def get_calendar(self, timetable, start_date, end_date, hide_details=False):
         cal = Calendar()
 
         for item in timetable:
             for time in item["info"]:
                 event = Event()
-                event.add('summary', item["name"])
+                event.add('summary', item["name"] if not hide_details else "수업")
                 event.add('dtstart', parser.parse("%s %s" % (self.get_nearest_date(start_date, time["day"]), time["startAt"])))
                 event.add('dtend', parser.parse("%s %s" % (self.get_nearest_date(start_date, time["day"]), time["endAt"])))
                 event.add('rrule', {'freq': 'WEEKLY', 'until': parser.parse(end_date)})
-                if time["place"] != "":
+                if time["place"] != "" and not hide_details:
                     event.add('location', time["place"])
                 cal.add_component(event)
 
