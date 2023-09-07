@@ -1,7 +1,11 @@
 from datetime import time
 import requests
+import re
 class Everytime:
     def __init__(self, path):
+        if re.match('^(https:\/\/everytime.kr\/@)[A-Za-z\d]{0,}', path) != None:
+            self.path = re.search('@[a-zA-Z\\d]{0,}', path).group().replace("@", "");
+            return
         self.path = path
 
     def get_timetable(self):

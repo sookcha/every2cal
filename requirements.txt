@@ -1,3 +1,4 @@
 icalendar>=4.0.3
 BeautifulSoup4>=4.6.3
 requests>=2.20.1
+re>=2.2.1
