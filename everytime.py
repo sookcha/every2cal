@@ -1,10 +1,11 @@
 from datetime import time
 import requests
-import re
+from urllib.parse import urlparse
 class Everytime:
     def __init__(self, path):
-        if re.match('^(https:\/\/everytime.kr\/@)[A-Za-z\d]{0,}', path) != None:
-            self.path = re.search('@[a-zA-Z\\d]{0,}', path).group().replace("@", "");
+        url = urlparse(path)
+        if url.netloc == "everytime.kr":
+            self.path = url.path.replace("/@", "");
             return
         self.path = path
 
