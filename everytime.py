@@ -1,6 +1,7 @@
 from datetime import time
 import requests
 from urllib.parse import urlparse
+
 class Everytime:
     def __init__(self, path):
         url = urlparse(path)
