@@ -30,6 +30,10 @@ Everytime 앱 보다 캘린더로 일정을 관리하는게 편한 마음에 항
 에브리타임이 크롤링 방지에 꽤 신경을 쓰시는 것 같아, 공유된 시간표의 id 를 이용해 긁어오는 방식으로
 변경되었습니다.
 
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=sookcha/every2cal&type=Date)](https://star-history.com/#sookcha/every2cal&Date)
+
 
 # License
 
