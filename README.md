@@ -16,10 +16,21 @@ Everytime 앱 보다 캘린더로 일정을 관리하는게 편한 마음에 항
 
 ![Screenshot_20210911-021511_Everytime](https://user-images.githubusercontent.com/1160378/132894358-ab9aac60-7c1e-4a68-9c65-00fbd6400314.jpg)
 
+### 설치
+
+```bash
+ pip install icalendar       # icalendar 라이브러리 설치
+```
+
+### 사용 절차
+
 1. 사진과 같이 본인이 공유할 시간표의 공개 URL을 가져옵니다
 2. 공개 URL은 `https://everytime.kr/@id` 구조입니다. id 부분을 복사합니다.
+   - `https://everytime.kr/@C0k10yg5jgTjs78UWy8T` 에서 `C0k10yg5jgTjs78UWy8T` 을 복사합니다.
 3. `python every2cal.py --begin 학기가 시작하는 날짜 --end 학기가 끝나는 날짜` 로 프로그램을 실행합니다.
+    - e.g. `python every2cal.py --begin 2024-03-04 --end 2024-06-30`
 4. 2번 과정에서 만든 id를 붙여넣기 합니다.
+   - e.g. ![](https://i.imgur.com/QeO1VMN.png)
 
 내부적으로 해당 URL에 접근해 XML 파일을 읽어서 시간표를 .ics 파일로 변환해주고 있습니다.
 
