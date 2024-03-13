@@ -28,8 +28,7 @@ Everytime 앱 보다 캘린더로 일정을 관리하는게 편한 마음에 항
 2. 공개 URL은 `https://everytime.kr/@id` 구조입니다. id 부분을 복사합니다.
    - `https://everytime.kr/@C0k10yg5jgTjs78UWy8T` 에서 `C0k10yg5jgTjs78UWy8T` 을 복사합니다.
 3. `python every2cal.py --begin 학기가 시작하는 날짜 --end 학기가 끝나는 날짜` 로 프로그램을 실행합니다.
-    - e.g. `python every2cal.py --begin 2024-03-04 --end 2024-06-30 --id C0k10yg5jgTjs78UWy8T`
-    - @C0k10yg5jgTjs78UWy8T
+    - e.g. `python every2cal.py --begin 2024-03-04 --end 2024-06-30`
 4. 2번 과정에서 만든 id를 붙여넣기 합니다.
    - e.g. ![](https://i.imgur.com/QeO1VMN.png)
 
